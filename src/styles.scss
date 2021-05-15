@@ -1,1 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+   font-family: 'Louis George Cafe Regular';
+   src: url('./assets/font/Louis George Cafe/Regular.woff2') format('woff2'),
+      url('./assets/font/Louis George Cafe/Regular.woff') format('woff');
+}
+
+
+@font-face {
+   font-family: 'Typo Latin Serif Regular';
+   src: url('./assets/font/Typo Latin Serif/Regular.woff2') format('woff2'),
+      url('./assets/font/Typo Latin Serif/Regular.woff') format('woff');
+}
+
+html, body { height: 100%; scroll-behavior: smooth; }
+body { margin: 0px; }
+html {font-size: 20px; font-family: Louis George Cafe Regular, Roboto, sans-serif;}

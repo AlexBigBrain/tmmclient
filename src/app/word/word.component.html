@@ -1,0 +1,46 @@
+<div class="relative p-12">
+    <div *ngIf="wordStatus(wordInfo) === 3">
+        <div *ngFor="let wordData of wordInfo.data.usable">
+            <h1>{{wordData.Word.specificWord}} -- {{wordData.Word.Language}}</h1>
+            <br>
+
+            <h1>Descrizioni:</h1>
+            <div *ngFor="let DescriptionData of wordData.Descriptions">
+                <p>{{DescriptionData.Description}}</p>
+                <div *ngFor="let ExampleData of wordData.Examples">
+                    <div *ngIf="DescriptionData.descriptionID === ExampleData.descriptionID">
+                        <p>{{ExampleData.Example}}</p>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+
+            <h1>Sinonimi Italiani:</h1>
+            <div *ngFor="let Sinonim of wordData.SinonimsIT">
+                <p>{{Sinonim}}</p>
+            </div>
+
+            <h1>English Sinonims:</h1>
+            <div *ngFor="let Sinonim of wordData.SinonimsEN">
+                <p>{{Sinonim}}</p>
+            </div>
+
+            <h1>Traduzioni Italiane:</h1>
+            <div *ngFor="let Traslation of wordData.TranslasionsIT">
+                <p>{{Traslation}}</p>
+            </div>
+
+            <h1>English Translations:</h1>
+            <div *ngFor="let Translation of wordData.TranslasionsEN">
+                <p>{{Translation}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === 0">
+        <h1>In attesa di risposta dal database</h1>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === -1">
+        <h1>Non è stato possibile connettersi con il database...</h1>
+    </div>
+</div>
